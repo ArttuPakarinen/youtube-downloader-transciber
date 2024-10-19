@@ -1,35 +1,31 @@
-Tässä ovat komennot, jotka kannattaa suorittaa että voit ajaa script.sh
+This script downloads a youtube video and transscribes it's audio.
 
-Varmista yt-dlp asennus:
+you need to create .env file with variables
+    YOUTUBE_ID=<youtube id>
+    OPENAI_API_KEY=<open ai API key>
+
+Ensure yt-dlp is installed:
     yt-dlp --version
 
-Jos yt-dlp ei ole asennettuna, asenna se:
+If yt-dlp is not installed, install it:
     sudo apt update
     sudo apt install yt-dlp
 
-Varmista ffmpeg asennus:
+Ensure ffmpeg is installed:
     ffmpeg -version
 
-Jos ffmpeg ei ole asennettuna, asenna se:
+If ffmpeg is not installed, install it:
     sudo apt update
     sudo apt install ffmpeg
 
-Varmista, että Node.js on asennettuna:
+Ensure Node.js is installed:
     node -v
 
-Jos Node.js ei ole asennettuna, asenna se:
+If Node.js is not installed, install it:
     sudo apt install nodejs npm
 
-Tarkista, että .env-tiedosto on olemassa ja sisältää tarvittavan YOUTUBE_ID-arvon:
-    cat .env
-
-Tämä varmistaa, että skripti pystyy lukemaan YOUTUBE_ID oikein.
-
-Jos haluat että scripti osaa tekstittää youtube sisällön, sinun pitää hankkia OPEN AI:lta API avain, ja lisätä se .env tiedostoon:
-    OPENAI_API_KEY=XXXX
-
-Varmista, että Node.js-kirjastot ovat asennettuna
+Ensure that Node.js libraries are installed:
     npm install
 
-Kun kaikki nämä tarkistukset ja tarvittavat asennukset on suoritettu, voit ajaa skriptin ongelmitta.
+Once all these checks and installations are done, you can run the script without issues:
     sh ./script.sh
