@@ -1,0 +1,26 @@
+Hei chatGPT.
+
+Tee minulle seuraava bash scripti:
+
+Ensin hae ID .env tiedostosta muuttusta YOUTUBE_ID
+
+Sitten aja komento ja lataa ääni
+yt-dlp -f bestaudio -o "<YOUTUBE_ID>_output.mp3" "https://www.youtube.com/watch?v=<YOUTUBE_ID>"
+
+Sitten aja komento ja muuta laatu
+ffmpeg -i <YOUTUBE_ID>_output.mp3 -b:a 32k -ac 1 -ar 16000 <YOUTUBE_ID>_output_low_quality.mp3
+
+Sitten muuta tiedosto 5 minuutin pätkiin kansioon /splitted_audio/<YOUTUBE_ID> (tee kansio jos sitä ei löydy)
+
+Tämän jälkeen aja node scripti node transcribe.js
+
+
+
+
+
+### muita juttuja ###
+Ensin salli ajo:
+chmod +x script.sh
+
+Sitten aja:
+./script.sh
